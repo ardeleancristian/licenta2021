@@ -1,8 +1,9 @@
-- task: ArchiveFiles@2
+steps:
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
-    rootFolderOrFile: 'proiect_licenta'
-    includeRootFolder: true
-    archiveType: 'zip'
-    archiveFile: 'arhiva'
-    replaceExistingArchive: true
-    
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: |
+      **/*
+      !.git/**/*
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
