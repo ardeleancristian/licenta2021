@@ -4,7 +4,7 @@ pool: default
  
 variables:
   - name: repository
-    value: 'devopsjourney'
+    value: 'cryptocontainer'
   - name: dockerfile
     value: 'app/Dockerfile'
   - name: containerRegistry
