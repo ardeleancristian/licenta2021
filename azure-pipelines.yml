@@ -6,7 +6,7 @@ variables:
   - name: repository
     value: 'devopsjourney'
   - name: dockerfile
-    value: '/app/Dockerfile'
+    value: 'app/Dockerfile'
   - name: containerRegistry
     value: 'crypto'
  
