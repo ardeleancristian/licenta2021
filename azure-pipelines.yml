@@ -8,7 +8,7 @@ variables:
   - name: dockerfile
     value: '/app/Dockerfile'
   - name: containerRegistry
-    value: 'cryptocurrencyregistry'
+    value: 'crypto'
  
 stages :
   - stage: Build
