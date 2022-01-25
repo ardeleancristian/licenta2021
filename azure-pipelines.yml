@@ -17,4 +17,4 @@ steps:
   inputs:
     repository: $(imageName)
     command: build
-    Dockerfile: docker/Dockerfile
+    Dockerfile: app/Dockerfile
