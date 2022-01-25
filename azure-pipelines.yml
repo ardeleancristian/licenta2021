@@ -1,4 +1,4 @@
-- task: ArchiveFiles@2
+- task: ArchiveFiles
   inputs:
     rootFolderOrFile: '$(Build.BinariesDirectory)'
     includeRootFolder: true
