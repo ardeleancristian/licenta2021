@@ -8,12 +8,13 @@ trigger:
 
 pool: default
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+variables:
+  imageName: 'python-app-docker'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-    mkdir ardeleansmecheru
-  displayName: 'DisplayName la job'
+steps:
+- task: Docker@2
+  displayName: Build an image
+  inputs:
+    repository: $(imageName)
+    command: build
+    Dockerfile: docker/Dockerfile
