@@ -5,3 +5,4 @@ USDC
 ADA
 DOGE
 DOT
+DAS
