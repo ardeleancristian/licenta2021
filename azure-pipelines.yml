@@ -1,20 +1,27 @@
-trigger:
-- main
-
-pool : default
-
--stage: Build
-displayName: Build and push stage
-jobs:  
-  - job: Build
-    displayName: Build job
-    steps:
-    - task: Docker@2
-      displayName: Build and push an image to container registry
-      inputs:
-        command: buildAndPush
-        repository: $(imageRepository)
-        dockerfile: app/Dockerfile
-        containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+trigger: none
+ 
+pool: default
+ 
+variables:
+  - name: repository
+    value: 'devopsjourney'
+  - name: dockerfile
+    value: '/app/Dockerfile'
+  - name: containerRegistry
+    value: 'cryptocurrencyregistry'
+ 
+stages :
+  - stage: Build
+    displayName: Build and push stage
+    jobs: 
+    - job: Build
+      displayName: Build job
+      steps:
+      - task: Docker@2
+        displayName: Build and push an image to container registry
+        inputs:
+          command: buildAndPush
+          repository: ${{ variables.repository }}
+          dockerfile: ${{ variables.dockerfile }}
+          containerRegistry: ${{ variables.containerRegistry }}
+          tags: $(Build.BuildId)
