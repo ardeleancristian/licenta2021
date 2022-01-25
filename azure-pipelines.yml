@@ -4,4 +4,5 @@
     includeRootFolder: true
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
+    replaceExistingArchive: false
+    verbose: true
