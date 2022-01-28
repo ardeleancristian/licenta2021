@@ -2,10 +2,7 @@
 import yfinance as yf  # Yahoo finance to get stock data
 import streamlit as st  # Streamlit to create the webapp
 from PIL import Image  # Import Pillow to add icons
-import streamlit_theme as stt
-
 from urllib.request import urlopen  # To add URLS
-stt.set_theme({'primary': '#1b3388'})
 st.write("""
 # Cryptocurrency Monitoring
 """)
